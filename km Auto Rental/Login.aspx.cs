@@ -48,5 +48,11 @@ namespace km_Auto_Rental
 
             }
         }
+
+        protected void Reg_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Client Sign-Up.aspx");
+
+        }
     }
 }

@@ -31,7 +31,7 @@
         <asp:Button id="signin" runat="server" Text="LOGIN" OnClick="signin_Click"/>
         </div>
         <div class="reg" style="margin:20px;">
-        <asp:Button id="Reg" runat="server" Text="SIGN UP"/>
+        <asp:Button id="Reg" runat="server" Text="SIGN UP" OnClick="Reg_Click"/>
         </div>
         </div>
 
