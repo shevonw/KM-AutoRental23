@@ -15,7 +15,7 @@
     <h4>Admin Login</h4>
 
 
-<hr></hr>
+<hr/>
     <div class="mb-3">
       <asp:Label id="AdmNamel" runat="server" Text="Username"></asp:Label>
       <asp:TextBox id="AdmName" type="text" runat="server" placeholder="AdminUser"></asp:TextBox>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="mb-3">
-       <asp:Button id="AdmLgin" runat="server" Text="LOGIN"/>
+       <asp:Button id="AdmLgin" runat="server" Text="LOGIN" OnClick="AdmLgin_Click"/>
     </div>
 
    </div>
