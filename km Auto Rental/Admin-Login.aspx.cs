@@ -34,11 +34,12 @@ namespace km_Auto_Rental
                     while (dr.Read())
                     {
                         Response.Write("<script>alert('" + dr.GetValue(1).ToString() + "');</script>");
+                        Response.Redirect("Admin.aspx");
                     }
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid credentials');</scripts>");
+                    Response.Write("<script>alert('Invalid credentials');</script>");
                 }
                 
             }
