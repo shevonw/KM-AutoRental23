@@ -92,7 +92,7 @@
             <a class="footerlink" href="Admin-Login.aspx">Client Management</a> |
             <a class="footerlink" href="Member-Management.aspx">Client Management</a> | 
             <a class="footerlink" href="Vehicle-Rent.aspx">Vehicle Rented</a> | 
-            <a class="footerlink" href="Inventory.aspx">Inventry</a> | 
+            <a class="footerlink" href="Inventory.aspx">Inventory</a> | 
         </p>
         </div>
     </div>
