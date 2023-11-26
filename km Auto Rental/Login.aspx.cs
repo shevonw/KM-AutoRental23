@@ -34,7 +34,8 @@ namespace km_Auto_Rental
                 {
                     while (dr.Read())
                     {
-                        Response.Write("<script>alert('" + dr.GetValue(0).ToString() + "');</script>");
+                        //Response.Write("<script>alert('" + dr.GetValue(0).ToString() + "');</script>");
+                        Response.Redirect("User-Profile.aspx");
                     }
                 }
                 else

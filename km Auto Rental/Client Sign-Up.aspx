@@ -42,7 +42,7 @@
 
     <div class="mb-3">
       <asp:Label id="ClphnNu" runat="server" Text="Phone"></asp:Label>
-      <asp:TextBox id="PhnNu" type="Email" runat="server" placeholder="1 876 888-6544"></asp:TextBox>
+      <asp:TextBox id="PhnNu" type="text" runat="server" placeholder="1 876 888-6544"></asp:TextBox>
     </div>
 
        <hr></hr>
