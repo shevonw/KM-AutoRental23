@@ -58,7 +58,7 @@
     </div>
 
     <div class="mb-3">
-       <asp:Button id="signup" runat="server" Text="CREATE" />
+       <asp:Button id="signup" runat="server" Text="CREATE" OnClick="signup_Click" />
     </div>
 
 </div>
