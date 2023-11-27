@@ -22,6 +22,90 @@ namespace km_Auto_Rental
 
         protected void signup_Click(object sender, EventArgs e)
         {
+            if (checkCredentialsOne())
+            {
+                Response.Write("<script>alert('Driver's License number already being used please contact administrators. ');</script>");
+            }
+            else if (checkCredentialsTwo())
+            {
+                Response.Write("<script>alert('Username already being used please change.');</script>");
+            }
+            else
+            {
+                signupNewUser();
+            }
+
+        }
+
+        bool checkCredentialsOne()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Customers where DriversNumber='" + dl.Text.Trim() + "';", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count >= 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
+            }
+        }
+
+        bool checkCredentialsTwo()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Customers where username='"+username.Text.Trim()+"';", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count >= 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
+            }
+            
+        }
+
+        void signupNewUser()
+        {
             try
             {
                 SqlConnection con = new SqlConnection(strcon);
@@ -45,11 +129,10 @@ namespace km_Auto_Rental
                 con.Close();
                 Response.Write("<script>alert('Sign Up Successful. Please go to Login');</script>");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
-
         }
     }
 }
