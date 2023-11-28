@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master Page.Master" AutoEventWireup="true" CodeBehind="Vehicle-Rent.aspx.cs" Inherits="km_Auto_Rental.Vehicle_Rent" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
@@ -122,6 +123,10 @@
                   <hr style="width:50%;"/>
              <!-- This is where the account STATUS indicator is--> <!--Class="Badge" is BOOTSTRAP-->
               </center>
+
+             <div id="rentedVehicles">
+    <asp:GridView ID="GridViewRental" runat="server" AutoGenerateColumns="true"></asp:GridView>
+</div>
 
             <div class="card-body">
                 <asp:GridView ID="GridView1" runat="server"></asp:GridView>          

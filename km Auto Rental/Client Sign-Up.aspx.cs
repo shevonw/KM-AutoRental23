@@ -47,21 +47,23 @@ namespace km_Auto_Rental
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Customers where DriversNumber='" + dl.Text.Trim() + "';", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
 
-                if (dt.Rows.Count >= 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Customers where DriversNumber='" + dl.Text.Trim() + "';", con);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-                con.Close();
+                    if (dt.Rows.Count >= 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                    con.Close();
+                
             }
             catch (Exception ex)
             {
