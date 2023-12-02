@@ -42,7 +42,7 @@ namespace km_Auto_Rental
             }
             catch (Exception ex)
             {
-                // Handle any exceptions, you might want to log the exception or display an error message
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
         }
     }

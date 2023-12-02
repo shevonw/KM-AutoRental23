@@ -46,7 +46,7 @@ namespace km_Auto_Rental
             }
             catch (Exception ex)
             {
-
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
         }
 

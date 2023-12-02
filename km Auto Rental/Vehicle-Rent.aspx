@@ -3,6 +3,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
 
 
@@ -125,8 +127,21 @@
               </center>
 
              <div id="rentedVehicles">
-    <asp:GridView ID="GridViewRental" runat="server" AutoGenerateColumns="true"></asp:GridView>
+    <asp:GridView ID="GridViewRental" runat="server" AutoGenerateColumns="False" CssClass="table">
+        <HeaderStyle BackColor="#5cb85c" Font-Bold="True" ForeColor="White" />
+        <AlternatingRowStyle BackColor="#f9f9f9" />
+        <Columns>
+            <asp:BoundField DataField="RentalID" HeaderText="Rental ID" SortExpression="RentalID" />
+            <asp:BoundField DataField="AdminID" HeaderText="Admin ID" SortExpression="AdminID" />
+            <asp:BoundField DataField="CustomerID" HeaderText="Customer ID" SortExpression="CustomerID" />
+            <asp:BoundField DataField="StartDate" HeaderText="Start Date" SortExpression="StartDate" DataFormatString="{0:MM/dd/yyyy}" />
+            <asp:BoundField DataField="EndDate" HeaderText="End Date" SortExpression="EndDate" DataFormatString="{0:MM/dd/yyyy}" />
+            <asp:BoundField DataField="TotalCost" HeaderText="Total Cost" SortExpression="TotalCost" DataFormatString="{0:C}" />
+            <asp:BoundField DataField="PaymentMethod" HeaderText="Payment Method" SortExpression="PaymentMethod" />
+        </Columns>
+    </asp:GridView>
 </div>
+
 
             <div class="card-body">
                 <asp:GridView ID="GridView1" runat="server"></asp:GridView>          
