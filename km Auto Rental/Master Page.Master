@@ -88,11 +88,13 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <p>
-            <a class="footerlink" href="Admin-Login.aspx">Admin Login</a> | 
-            <a class="footerlink" href="Admin-Login.aspx">Client Management</a> |
-            <a class="footerlink" href="Member-Management.aspx">Client Management</a> | 
-            <a class="footerlink" href="Vehicle-Rent.aspx">Vehicle Rented</a> | 
-            <a class="footerlink" href="Inventory.aspx">Inventory</a> | 
+            <asp:LinkButton runat="server" ID="LinkButton1" CssClass="footerlink" OnClick="admin_loginbtn_Click">Admin Login</asp:LinkButton> |
+            <asp:LinkButton runat="server" ID="LinkButton2" CssClass="footerlink" OnClick="client_managebtn_Click">Client Management</asp:LinkButton> |
+            <asp:LinkButton runat="server" ID="LinkButton3" CssClass="footerlink" OnClick="Vehicle_Rentedbtn_Click">Vehicle Rented</asp:LinkButton> |
+            <asp:LinkButton runat="server" ID="LinkButton4" CssClass="footerlink" OnClick="Inventorybtn_Click">Inventory</asp:LinkButton> |
+            <!--<asp:LinkButton runat="server" ID="LinkButton5" CssClass="footerlink" OnClick="client_managebtn_Click">Client Management</asp:LinkButton> |-->
+
+            
         </p>
         </div>
     </div>
