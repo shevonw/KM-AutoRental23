@@ -69,6 +69,7 @@
     <asp:LinkButton runat="server" ID="LoginLinkButton" OnClick="Loginbtn_Click" style="text-decoration:none; display:inline-block; margin-right:10px;">Login</asp:LinkButton> 
     <asp:LinkButton runat="server" ID="SignUpLinkButton" OnClick="SignUpbtn_Click" style="text-decoration:none; display:inline-block; margin-right:10px;">Sign Up</asp:LinkButton> 
     <asp:LinkButton runat="server" ID="ProfileLinkButton" OnClick="Profilebtn_Click" style="text-decoration:none; display:inline-block; margin-right:10px;">Profile</asp:LinkButton> 
+    <asp:LinkButton runat="server" ID="LogoutButton" OnClick="Logoutbtn_Click" style="text-decoration:none; display:inline-block; margin-right:10px;">Log Out</asp:LinkButton> 
     <!--<a href="User-Profile.aspx" style="text-decoration:none;">Profile</a>-->
 </span>
 

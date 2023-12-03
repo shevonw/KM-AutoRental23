@@ -33,9 +33,14 @@ namespace km_Auto_Rental
                 {
                     while (dr.Read())
                     {
-                        Response.Write("<script>alert('" + dr.GetValue(1).ToString() + "');</script>");
-                        Response.Redirect("Admin.aspx");
+                        //Response.Write("<script>alert('" + dr.GetValue(1).ToString() + "');</script>");
+                        Session["Username"] = dr.GetValue(1).ToString();
+                        Session["FirstName"] = dr.GetValue(3).ToString();
+                        Session["LastName"] = dr.GetValue(4).ToString();
+                        Session["role"] = "Admin";
+                        
                     }
+                    Response.Redirect("Admin.aspx");
                 }
                 else
                 {
