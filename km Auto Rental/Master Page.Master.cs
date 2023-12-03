@@ -17,6 +17,9 @@ namespace km_Auto_Rental
                 {
                     LinkButton1.Visible = true;
                     LinkButton2.Visible = false;
+                    ProfileLinkButton.Visible = false;
+                    LinkButton3.Visible = false;
+                    LinkButton4.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -43,6 +46,20 @@ namespace km_Auto_Rental
         protected void Inventorybtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("Inventory.aspx");
+        }
+        protected void Loginbtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void SignUpbtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Client Sign-Up.aspx");
+        }
+
+        protected void Profilebtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("User-Profile.aspx");
         }
     }
 }
