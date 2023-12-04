@@ -38,7 +38,7 @@ namespace km_Auto_Rental
                     LinkButton1.Visible = false;
                     LoginLinkButton.Visible = false;
                     SignUpLinkButton.Visible = false;
-                    LinkButton2.Visible = false;
+                    LinkButton2.Visible = true;
                     ProfileLinkButton.Visible = true;
                     LinkButton3.Visible = true;
                     LinkButton4.Visible = true;
