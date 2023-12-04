@@ -14,7 +14,7 @@ namespace km_Auto_Rental
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            /*if (!IsPostBack)
             {
                 // Assuming you have the user's ID stored in a session variable
                 string userId = Session["userId"].ToString();
@@ -41,7 +41,7 @@ namespace km_Auto_Rental
             public string DriversLicense { get; set; }
             public string Username { get; set; }
             public string Password { get; set; }
-        }
+        }*/
         }
     }
 }
