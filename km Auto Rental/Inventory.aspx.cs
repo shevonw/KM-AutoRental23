@@ -73,8 +73,52 @@ namespace km_Auto_Rental
 
         protected void GoInvBtn_Click(object sender, EventArgs e)
         {
+            if(String.IsNullOrEmpty(TextBox1.Text))
+            {
+                getvehiclebyplate();
+            }
+            else
+            {    
             getvehiclebyChassis();
+            }
+            
         }
+
+        void getvehiclebyplate()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Vehicles where Plate_Number='" + TextBox2.Text.Trim() + "';", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count >= 1)
+                {
+                    TextBox1.Text = dt.Rows[0][0].ToString();
+                    Vmake.Text = dt.Rows[0][2].ToString();
+                    Model.Text = dt.Rows[0][3].ToString();
+                    InvYear.Text = dt.Rows[0][4].ToString();
+                    RentRate.Text = dt.Rows[0][5].ToString();
+                }
+                else
+                {
+                    Response.Write("<script>alert('INVALID INPUT');</script>");
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
+        
+        
 
         void getvehiclebyChassis()
         {
