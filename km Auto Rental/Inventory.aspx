@@ -35,7 +35,7 @@
                   <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                 </div>
                <div class="col-md-4">
-                      <asp:Button class="btn btn-success" ID="GoInvBtn" runat="server" Text="SEARCH" style="margin-top:20px;"/>
+                      <asp:Button class="btn btn-success" ID="GoInvBtn" runat="server" Text="SEARCH" style="margin-top:20px;" OnClick="GoInvBtn_Click"/>
                 </div>
 </div>
 <div class="row">
@@ -73,17 +73,17 @@
                 <hr />
 <div class="row">
 <div class="col-md-4">
-<asp:Button class="btn btn-success" ID="InvAddBtn" runat="server" Text="ADD" style="margin-top:20px;"/><!--BUTTON with Bootstrap class-->
+<asp:Button class="btn btn-success" ID="InvAddBtn" runat="server" Text="ADD" style="margin-top:20px;" OnClick="InvAddBtn_Click"/><!--BUTTON with Bootstrap class-->
 </div>
                 
 
 <div class="col-md-4">
-<asp:Button class="btn btn-primary" ID="InvUpBtn" runat="server" Text="UPDATE" style="margin-top:20px;"/><!--BUTTON with Bootstrap class-->
+<asp:Button class="btn btn-primary" ID="InvUpBtn" runat="server" Text="UPDATE" style="margin-top:20px;" OnClick="InvUpBtn_Click"/><!--BUTTON with Bootstrap class-->
 </div>
 
 
 <div class="col-md-4">
-<asp:Button class="btn btn-danger" ID="InvDelBtn" runat="server" Text="DELETE" style="margin-top:20px;"/><!--BUTTON with Bootstrap class-->
+<asp:Button class="btn btn-danger" ID="InvDelBtn" runat="server" Text="DELETE" style="margin-top:20px;" OnClick="InvDelBtn_Click"/><!--BUTTON with Bootstrap class-->
 </div>
        
 </div>
