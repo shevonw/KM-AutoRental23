@@ -45,5 +45,10 @@ namespace km_Auto_Rental
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
         }
+
+        protected void issue_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
