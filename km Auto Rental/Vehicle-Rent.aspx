@@ -101,7 +101,7 @@
                 
 
                   <div class="col-md-6">
-                  <asp:Button class="btn btn-success" ID="issue" runat="server" Text="ISSUE VEHICLE" style="margin-top:20px;"/>
+                  <asp:Button class="btn btn-success" ID="issue" runat="server" Text="ISSUE VEHICLE" style="margin-top:20px;" OnClick="issue_Click"/>
                   </div>
                   </div>
 
