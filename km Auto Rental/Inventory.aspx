@@ -105,7 +105,19 @@
 <!-- -->
     </center>
     <div class="card-body">
-        <asp:GridView ID="InvTabl" runat="server"></asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:KMCarRentalDBConnectionString %>" SelectCommand="SELECT * FROM [Vehicles]"></asp:SqlDataSource>
+        <asp:GridView ID="InvTabl" runat="server" AutoGenerateColumns="False" DataKeyNames="Chassis_Number" DataSourceID="SqlDataSource1">
+            <Columns>
+                <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis_Number" ReadOnly="True" SortExpression="Chassis_Number" />
+                <asp:BoundField DataField="Plate_Number" HeaderText="Plate_Number" SortExpression="Plate_Number" />
+                <asp:BoundField DataField="Make" HeaderText="Make" SortExpression="Make" />
+                <asp:BoundField DataField="Model" HeaderText="Model" SortExpression="Model" />
+                <asp:BoundField DataField="Year" HeaderText="Year" SortExpression="Year" />
+                <asp:BoundField DataField="RentalRate" HeaderText="RentalRate" SortExpression="RentalRate" />
+                <asp:BoundField DataField="AvailabilityStatus" HeaderText="AvailabilityStatus" SortExpression="AvailabilityStatus" />
+                <asp:BoundField DataField="Colour" HeaderText="Colour" SortExpression="Colour" />
+            </Columns>
+        </asp:GridView>
 
     </div>
     </div>
