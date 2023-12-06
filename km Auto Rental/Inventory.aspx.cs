@@ -15,7 +15,7 @@ namespace km_Auto_Rental
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            InvTabl.DataBind();
         }
 
         protected void InvAddBtn_Click(object sender, EventArgs e)
@@ -34,9 +34,16 @@ namespace km_Auto_Rental
         {
             if (checkifVehicleExist())
             {
-                updateVehicle();
-                Response.Write("<script>alert('Vehicle price was updated');</script>");
-
+                if (String.IsNullOrWhiteSpace(RentRate.Text))
+                {
+                    updateVehicleplate();
+                    Response.Write("<script>alert('Vehicle plate was updated');</script>");
+                }
+                else
+                {
+                    updateVehiclerentrate();
+                    Response.Write("<script>alert('Vehicle price was updated');</script>");
+                }
             }
             else
             {
@@ -118,15 +125,16 @@ namespace km_Auto_Rental
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Vehicle added to database');</script>");
+               // Response.Write("<script>alert('Vehicle added to database');</script>");
                 clearform();
+                InvTabl.DataBind();
             }
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
         }
-        void updateVehicle()
+        void updateVehiclerentrate()
         {
             try
             {
@@ -136,15 +144,17 @@ namespace km_Auto_Rental
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("UPDATE Vehicles SET RentalRate = @rentrate WHERE Chassis_Number'"+ TextBox1.Text.Trim() +"'", con);
+                SqlCommand cmd = new SqlCommand("UPDATE Vehicles SET RentalRate = @rentrate WHERE Chassis_Number ='"+ TextBox1.Text.Trim() +"'", con);
 
                 cmd.Parameters.AddWithValue("@rentrate", RentRate.Text.Trim());
                 
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Vehicle price updated successfully');</script>");
+                //Response.Write("<script>alert('Vehicle price updated successfully');</script>");
                 clearform();
+                InvTabl.DataBind();
+
             }
             catch (Exception ex)
             {
@@ -169,6 +179,7 @@ namespace km_Auto_Rental
                 con.Close();
                 Response.Write("<script>alert('Vehicle was successfully deleted');</script>");
                 clearform();
+                InvTabl.DataBind();
             }
             catch (Exception ex)
             {
@@ -184,6 +195,34 @@ namespace km_Auto_Rental
             Model.Text = "";
             InvYear.Text = "";
             RentRate.Text = "";
+        }
+
+        void updateVehicleplate()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("UPDATE Vehicles SET Plate_Number = @platenum WHERE Chassis_Number ='" + TextBox1.Text.Trim() + "'", con);
+
+                cmd.Parameters.AddWithValue("@platenum", TextBox2.Text.Trim());
+
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+                //Response.Write("<script>alert('Vehicle plate updated successfully');</script>");
+                clearform();
+                InvTabl.DataBind();
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
         }
     }
 }
