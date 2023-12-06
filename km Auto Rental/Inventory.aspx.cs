@@ -36,8 +36,14 @@ namespace km_Auto_Rental
             {
                 if (String.IsNullOrWhiteSpace(RentRate.Text))
                 {
-                    updateVehicleplate();
-                    Response.Write("<script>alert('Vehicle plate was updated');</script>");
+                    if (String.IsNullOrWhiteSpace(TextBox2.Text)) {
+                        Response.Write("<script>alert('Please enter vehicle plate number');</script>");
+                    }
+                    else
+                    {
+                        updateVehicleplate();
+                        Response.Write("<script>alert('Vehicle plate was updated');</script>");
+                    }
                 }
                 else
                 {
