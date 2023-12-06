@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master Page.Master" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="km_Auto_Rental.Inventory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+   <!-- <script type ="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thread></thread>").append($(this).find("tr:first"))).dataTable()
+        })
+    </script>-->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -35,7 +40,7 @@
                   <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                 </div>
                <div class="col-md-4">
-                      <asp:Button class="btn btn-success" ID="GoInvBtn" runat="server" Text="SEARCH" style="margin-top:20px;"/>
+                      <asp:Button class="btn btn-success" ID="GoInvBtn" runat="server" Text="SEARCH" style="margin-top:20px;" OnClick="GoInvBtn_Click"/>
                 </div>
 </div>
 <div class="row">
@@ -73,17 +78,17 @@
                 <hr />
 <div class="row">
 <div class="col-md-4">
-<asp:Button class="btn btn-success" ID="InvAddBtn" runat="server" Text="ADD" style="margin-top:20px;"/><!--BUTTON with Bootstrap class-->
+<asp:Button class="btn btn-success" ID="InvAddBtn" runat="server" Text="ADD" style="margin-top:20px;" OnClick="InvAddBtn_Click"/><!--BUTTON with Bootstrap class-->
 </div>
                 
 
 <div class="col-md-4">
-<asp:Button class="btn btn-primary" ID="InvUpBtn" runat="server" Text="UPDATE" style="margin-top:20px;"/><!--BUTTON with Bootstrap class-->
+<asp:Button class="btn btn-primary" ID="InvUpBtn" runat="server" Text="UPDATE" style="margin-top:20px;" OnClick="InvUpBtn_Click"/><!--BUTTON with Bootstrap class-->
 </div>
 
 
 <div class="col-md-4">
-<asp:Button class="btn btn-danger" ID="InvDelBtn" runat="server" Text="DELETE" style="margin-top:20px;"/><!--BUTTON with Bootstrap class-->
+<asp:Button class="btn btn-danger" ID="InvDelBtn" runat="server" Text="DELETE" style="margin-top:20px;" OnClick="InvDelBtn_Click"/><!--BUTTON with Bootstrap class-->
 </div>
        
 </div>
@@ -105,7 +110,22 @@
 <!-- -->
     </center>
     <div class="card-body">
-        <asp:GridView ID="InvTabl" runat="server"></asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:KMCarRentalDBConnectionString %>" SelectCommand="SELECT * FROM [Vehicles]"></asp:SqlDataSource>
+    <asp:GridView ID="InvTabl" runat="server" AutoGenerateColumns="False" DataKeyNames="Chassis_Number" DataSourceID="SqlDataSource1" class="table table-striped table-bordered">
+        <Columns>
+            <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis Number" ReadOnly="True" SortExpression="Chassis_Number" />
+            <asp:BoundField DataField="Plate_Number" HeaderText="Plate Number" SortExpression="Plate_Number" />
+            <asp:BoundField DataField="Make" HeaderText="Make" SortExpression="Make" />
+            <asp:BoundField DataField="Model" HeaderText="Model" SortExpression="Model" />
+            <asp:BoundField DataField="Year" HeaderText="Year" SortExpression="Year" />
+            <asp:BoundField DataField="RentalRate" HeaderText="Rental Rate" SortExpression="RentalRate" />
+            <asp:BoundField DataField="AvailabilityStatus" HeaderText="Availability Status" SortExpression="AvailabilityStatus" />
+            <asp:BoundField DataField="Colour" HeaderText="Colour" SortExpression="Colour" />
+        </Columns>
+        <HeaderStyle CssClass="thead-dark" />
+    </asp:GridView>
+</div>
+
 
     </div>
     </div>

@@ -125,8 +125,9 @@
                   <hr style="width:50%;"/>
              <!-- This is where the account STATUS indicator is--> <!--Class="Badge" is BOOTSTRAP-->
               </center>
+             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:KMCarRentalDBConnectionString2 %>" SelectCommand="SELECT * FROM [Rentals]"></asp:SqlDataSource>
 
-             <div id="rentedVehicles">
+             <!--<div id="rentedVehicles">
     <asp:GridView ID="GridViewRental" runat="server" AutoGenerateColumns="False" CssClass="table">
         <HeaderStyle BackColor="#5cb85c" Font-Bold="True" ForeColor="White" />
         <AlternatingRowStyle BackColor="#f9f9f9" />
@@ -140,11 +141,22 @@
             <asp:BoundField DataField="PaymentMethod" HeaderText="Payment Method" SortExpression="PaymentMethod" />
         </Columns>
     </asp:GridView>
-</div>
+</div>-->
 
 
             <div class="card-body">
-                <asp:GridView ID="GridView1" runat="server"></asp:GridView>          
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RentalID" DataSourceID="SqlDataSource1" class="table table-striped table-bordered">
+                    <Columns>
+                        <asp:BoundField DataField="RentalID" HeaderText="RentalID" ReadOnly="True" SortExpression="RentalID" />
+                        <asp:BoundField DataField="AdminID" HeaderText="AdminID" SortExpression="AdminID" />
+                        <asp:BoundField DataField="DriversNumber" HeaderText="DriversNumber" SortExpression="DriversNumber" />
+                        <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis_Number" SortExpression="Chassis_Number" />
+                        <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
+                        <asp:BoundField DataField="EndDate" HeaderText="EndDate" SortExpression="EndDate" />
+                        <asp:BoundField DataField="TotalCost" HeaderText="TotalCost" SortExpression="TotalCost" />
+                        <asp:BoundField DataField="PaymentMethod" HeaderText="PaymentMethod" SortExpression="PaymentMethod" />
+                    </Columns>
+                </asp:GridView>          
            </div>      
      </div>
 </div>

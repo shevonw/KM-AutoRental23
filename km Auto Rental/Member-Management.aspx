@@ -64,7 +64,7 @@ A
                 
 
                 <div class="col-md-6">
-                  Last Name
+                  Last Name:
                   <asp:TextBox ID="Lnamm" runat="server"></asp:TextBox>
                 </div>
                </div>
@@ -126,10 +126,5 @@ A
 </div>
 </div>
 
-
-
-
-
-    HEllo World We are here
 
 </asp:Content>
