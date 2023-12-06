@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master Page.Master" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="km_Auto_Rental.Inventory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <!--<script type ="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thread></thread>").append($(this).find("tr:first"))).dataTable()
+        })
+    </script>-->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
