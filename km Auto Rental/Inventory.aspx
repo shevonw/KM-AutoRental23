@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master Page.Master" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="km_Auto_Rental.Inventory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <!--<script type ="text/javascript">
+   <!-- <script type ="text/javascript">
         $(document).ready(function () {
             $(".table").prepend($("<thread></thread>").append($(this).find("tr:first"))).dataTable()
         })
@@ -111,7 +111,7 @@
     </center>
     <div class="card-body">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:KMCarRentalDBConnectionString %>" SelectCommand="SELECT * FROM [Vehicles]"></asp:SqlDataSource>
-    <asp:GridView ID="InvTabl" runat="server" AutoGenerateColumns="False" DataKeyNames="Chassis_Number" DataSourceID="SqlDataSource1" CssClass="table table-striped table-bordered">
+    <asp:GridView ID="InvTabl" runat="server" AutoGenerateColumns="False" DataKeyNames="Chassis_Number" DataSourceID="SqlDataSource1" class="table table-striped table-bordered">
         <Columns>
             <asp:BoundField DataField="Chassis_Number" HeaderText="Chassis Number" ReadOnly="True" SortExpression="Chassis_Number" />
             <asp:BoundField DataField="Plate_Number" HeaderText="Plate Number" SortExpression="Plate_Number" />

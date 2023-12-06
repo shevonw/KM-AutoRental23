@@ -145,7 +145,7 @@
 
 
             <div class="card-body">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RentalID" DataSourceID="SqlDataSource1" CssClass="table table-striped table-bordered">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RentalID" DataSourceID="SqlDataSource1" class="table table-striped table-bordered">
                     <Columns>
                         <asp:BoundField DataField="RentalID" HeaderText="RentalID" ReadOnly="True" SortExpression="RentalID" />
                         <asp:BoundField DataField="AdminID" HeaderText="AdminID" SortExpression="AdminID" />
