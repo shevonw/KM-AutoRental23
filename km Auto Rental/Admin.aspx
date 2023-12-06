@@ -28,23 +28,27 @@
                   <hr style="width:50%;"/>
               </center>
                   
-                         
-              <div class="card-body">
+                            <div class="card-body">
               <div class="row">
                 <div class="col-md-4">
                    <label>Employee ID:</label> 
                    <asp:TextBox ID="EmpID" runat="server" placeholder="ID"></asp:TextBox>
-                    <asp:Button ID="Go" class="btn btn-primary" runat="server" Text="GO" />
+                    <asp:Button ID="Go" class="btn btn-primary" runat="server" Text="SEARCH" />
                     
                 </div>
                 
 
-                <div class="col-md-8">
-                  <label>Employee Name:</label>
-                  <asp:TextBox ID="EmpNme" runat="server" placeholder="Full Name"></asp:TextBox>
-                </div>
-               </div>
+     <div class="col-md-4">
+       <label>First Name:</label>
+       <asp:TextBox ID="EmpNme" runat="server" placeholder="First Name"></asp:TextBox>
+     </div>
 
+    <div class="col-md-4">
+      <label>Last Name:</label>
+      <asp:TextBox ID="EmpLnm" runat="server" placeholder="Last Name"></asp:TextBox>
+    </div>   
+
+            </div>
                 <div class="row">
                     <div class="col-md-12">
                        <label>Email:</label>
